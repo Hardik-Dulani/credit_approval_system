@@ -1,9 +1,13 @@
 # Use an official Python runtime as a parent image
 FROM python:3.11
 
+RUN apt-get update \
+    && apt-get install -y postgresql-client
+
 # Set environment variables
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE credit_approval_system.settings
+
 
 # Set the working directory in the container
 WORKDIR /app

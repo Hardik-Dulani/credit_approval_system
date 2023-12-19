@@ -10,6 +10,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      
 
   db:
     image: postgres:latest
@@ -19,5 +20,6 @@ services:
       POSTGRES_PASSWORD: admin@123
 networks:
   default:
-    external:
-      name: credit_approval_system_default
+    name: credit_approval_system_default
+      
+
